@@ -4,16 +4,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administration</title>
     <script src="./admin-script.js"></script>
+    <style>
+        div {
+            width: 100%;
+            display: flex;
+        }
+        aside, main {
+            padding: 0 1em;
+        }
+    </style>
 </head>
 <body>
     <h1>Administration</h1>
-    <main id="container"></main>
-    <form method="post">
-        <input type="text" name="title" id="title" placeholder="title">
-        <input type="date" name="publicationDate" id="publicationDate" placeholder="publicationDate">
-        <input type="text" maxlength="50" name="abstract" id="abstract" placeholder="abstract">
-        <input type="text" name="description" id="description" placeholder="description">
-        <button onclick="send()">Aggiungi</button>
-    </form>
+    <div>
+        <aside id="container"></aside>
+        <main>
+            <p><b>Aggiungi Articolo</b></p>
+            <form method="post">
+                <input type="text" name="_id" id="_id" placeholder="_id" disabled>
+                <input type="text" name="title" id="title" placeholder="title">
+                <input type="date" name="publicationDate" id="publicationDate" placeholder="publicationDate">
+                <input type="text" maxlength="50" name="abstract" id="abstract" placeholder="abstract">
+                <input type="text" name="description" id="description" placeholder="description">
+            </form>
+            <button onclick="send()">Aggiungi</button>
+            <button onclick="reset()">Reset</button>
+        </main>
+    </div>
+    <a href="./index.html">
+        <button>Home</button>
+    </a>
 </body>
 </html>

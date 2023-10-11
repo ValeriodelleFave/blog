@@ -1,15 +1,27 @@
 function loadData() {
     fetch("http://localhost:3000/blog/articles").then(async (response) => {
         const articles = await response.json();
-        let html = "";
+        document.getElementById("container").innerHTML = "";
         for (const article of articles) {
-            html += `
-                <article id="${article._id}">
-                    <p>${article.title} | ${article.publicationDate}</p>
-                </article>
-            `;
+            const articleElement = document.createElement("article");
+            articleElement.id = article._id;
+            const p = document.createElement("p");
+            p.innerHTML = article.title + "|" + article.publicationDate;
+            const editButton = document.createElement("button");
+            editButton.innerHTML = "±";
+            editButton.addEventListener("click", () => {
+                edit(article);
+            });
+            const cancelButton = document.createElement("button");
+            cancelButton.innerHTML = "×";
+            cancelButton.addEventListener("click", () => {
+                cancel(article);
+            });
+            p.appendChild(editButton);
+            p.appendChild(cancelButton);
+            articleElement.appendChild(p);
+            document.getElementById("container").appendChild(articleElement);
         }
-        document.getElementById("container").innerHTML = html;
     })
 }
 loadData();
@@ -17,11 +29,13 @@ loadData();
 async function send() {
 
     const object = {
+        _id: document.getElementById("_id").value == "" ? null : document.getElementById("_id").value,
         title: document.getElementById("title").value,
-        publishData: document.getElementById("publishData").value,
+        publicationDate: document.getElementById("publicationDate").value,
         abstract: document.getElementById("abstract").value,
         description: document.getElementById("description").value
     }
+    debugger
 
     await fetch("http://localhost:3000/blog/articles", {
         body: JSON.stringify(object),
@@ -31,4 +45,28 @@ async function send() {
         }
     });
     loadData();
+}
+
+function edit(params) {
+    for (const key in params) {
+        document.getElementById(key).value = params[key];
+    }
+}
+function cancel(params) {
+
+    fetch("http://localhost:3000/blog/articles", {
+        body: JSON.stringify(params),
+        method: "DELETE",
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    });
+    loadData();
+}
+function reset() {
+    document.getElementById("_id").value = null;
+    document.getElementById("title").value = null;
+    document.getElementById("publicationDate").value = null;
+    document.getElementById("abstract").value = null;
+    document.getElementById("description").value = null;
 }
