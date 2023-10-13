@@ -8,6 +8,6 @@ fetch("http://localhost:3000/blog/articles/" + location.search.replace("?", ""))
             <p>${article.description}</p>
         </div>
     `;
-    
+
     document.getElementById("container").innerHTML = html;
 })

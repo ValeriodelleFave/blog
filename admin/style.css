@@ -1,0 +1,14 @@
+div {
+    width: 100%;
+    display: flex;
+}
+
+aside,
+main {
+    padding: 0 1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}

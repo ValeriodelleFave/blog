@@ -3,7 +3,7 @@ fetch("http://localhost:3000/blog/articles").then(async (response) => {
     let html = "";
     for (const article of articles) {
         html += `
-            <a href="/article.html?${article._id}">
+            <a href="./article/article.html?${article._id}">
                 <article>
                     <p>${article.title}</p>
                     <span>${article.abstract}</span>
