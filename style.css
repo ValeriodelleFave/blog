@@ -8,6 +8,21 @@ main {
     align-items: center;
 }
 
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    width: 100%;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
 a {
     text-decoration: none;
 }
