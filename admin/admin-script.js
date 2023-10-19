@@ -33,7 +33,12 @@ async function send() {
         title: document.getElementById("title").value,
         publicationDate: document.getElementById("publicationDate").value,
         abstract: document.getElementById("abstract").value,
-        description: document.getElementById("description").value
+        description: document.getElementById("description").value,
+        cover: null,
+        image: {
+            data: "scasda",
+            orientation: "right"
+        }
     }
     debugger
 
@@ -52,9 +57,9 @@ function edit(params) {
         document.getElementById(key).value = params[key];
     }
 }
-function cancel(params) {
+async function cancel(params) {
 
-    fetch("http://localhost:3000/blog/articles", {
+    await fetch("http://localhost:3000/blog/articles", {
         body: JSON.stringify(params),
         method: "DELETE",
         headers: {
