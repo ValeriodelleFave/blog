@@ -1,4 +1,4 @@
-fetch("http://localhost:3000/blog/articles").then(async (response) => {
+fetch("https://my-endpoints.onrender.com/blog/articles").then(async (response) => {
     const articles = await response.json();
     let html = "";
     for (const article of articles) {

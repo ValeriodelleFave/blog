@@ -1,5 +1,5 @@
 function loadData() {
-    fetch("http://localhost:3000/blog/articles").then(async (response) => {
+    fetch("https://my-endpoints.onrender.com/blog/articles").then(async (response) => {
         const articles = await response.json();
         document.getElementById("container").innerHTML = "";
         for (const article of articles) {
@@ -42,7 +42,7 @@ async function send() {
     }
     debugger
 
-    await fetch("http://localhost:3000/blog/articles", {
+    await fetch("https://my-endpoints.onrender.com/blog/articles", {
         body: JSON.stringify(object),
         method: "POST",
         headers: {
@@ -59,7 +59,7 @@ function edit(params) {
 }
 async function cancel(params) {
 
-    await fetch("http://localhost:3000/blog/articles", {
+    await fetch("https://my-endpoints.onrender.com/blog/articles", {
         body: JSON.stringify(params),
         method: "DELETE",
         headers: {
