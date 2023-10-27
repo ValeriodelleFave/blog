@@ -24,6 +24,7 @@ function loadData() {
         }
     })
 }
+
 loadData();
 
 async function send() {
@@ -40,7 +41,6 @@ async function send() {
             orientation: "right"
         }
     }
-    debugger
 
     await fetch("https://my-endpoints.onrender.com/blog/articles", {
         body: JSON.stringify(object),
@@ -57,6 +57,7 @@ function edit(params) {
         document.getElementById(key).value = params[key];
     }
 }
+
 async function cancel(params) {
 
     await fetch("https://my-endpoints.onrender.com/blog/articles", {
@@ -68,6 +69,7 @@ async function cancel(params) {
     });
     loadData();
 }
+
 function reset() {
     document.getElementById("_id").value = null;
     document.getElementById("title").value = null;
