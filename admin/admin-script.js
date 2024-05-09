@@ -5,21 +5,34 @@ function loadData() {
         for (const article of articles) {
             const articleElement = document.createElement("article");
             articleElement.id = article._id;
-            const p = document.createElement("p");
-            p.innerHTML = article.title + "|" + article.publicationDate;
-            const editButton = document.createElement("button");
-            editButton.innerHTML = "±";
-            editButton.addEventListener("click", () => {
-                edit(article);
-            });
-            const cancelButton = document.createElement("button");
-            cancelButton.innerHTML = "×";
-            cancelButton.addEventListener("click", () => {
-                cancel(article);
-            });
-            p.appendChild(editButton);
-            p.appendChild(cancelButton);
-            articleElement.appendChild(p);
+            const articleContainer = document.createElement("div");
+                const articleTitle = document.createElement("p");
+                articleTitle.innerHTML = article.title;
+                const articleAbstract = document.createElement("p");
+                articleAbstract.innerHTML = article.abstract;
+                const articlePublicationDate = document.createElement("p");
+                articlePublicationDate.innerHTML = article.publicationDate;
+            articleContainer.appendChild(articleTitle);
+            articleContainer.appendChild(articleAbstract);
+            articleContainer.appendChild(articlePublicationDate);
+            articleContainer.classList.add("article");
+            const containerButtons = document.createElement("div");
+                containerButtons.classList.add("buttons-container");
+                const editButton = document.createElement("button");
+                editButton.innerHTML = "Modifica";
+                editButton.addEventListener("click", () => {
+                    edit(article);
+                });
+                const cancelButton = document.createElement("button");
+                cancelButton.innerHTML = "Cancella";
+                cancelButton.addEventListener("click", () => {
+                    cancel(article);
+                });
+                containerButtons.appendChild(editButton);
+                containerButtons.appendChild(cancelButton);
+                articleContainer.appendChild(containerButtons);
+
+            articleElement.appendChild(articleContainer);
             document.getElementById("container").appendChild(articleElement);
         }
     })
@@ -42,7 +55,7 @@ async function send() {
         }
     }
 
-    await fetch("https://my-endpoints.onrender.com/blog/articles", {
+    await fetch("http://localhost:3000/blog/articles", {
         body: JSON.stringify(object),
         method: "POST",
         headers: {
@@ -60,7 +73,7 @@ function edit(params) {
 
 async function cancel(params) {
 
-    await fetch("https://my-endpoints.onrender.com/blog/articles", {
+    await fetch("http://localhost:3000/blog/articles", {
         body: JSON.stringify(params),
         method: "DELETE",
         headers: {
