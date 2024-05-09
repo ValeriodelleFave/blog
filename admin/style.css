@@ -10,7 +10,12 @@ form-container {
 
 form {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    width: 450px;
+}
+
+form input {
+    margin: 1em;
 }
 
 .article {
