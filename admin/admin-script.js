@@ -8,12 +8,9 @@ function loadData() {
             const articleContainer = document.createElement("div");
                 const articleTitle = document.createElement("p");
                 articleTitle.innerHTML = article.title;
-                const articleAbstract = document.createElement("p");
-                articleAbstract.innerHTML = article.abstract;
                 const articlePublicationDate = document.createElement("p");
                 articlePublicationDate.innerHTML = article.publicationDate;
             articleContainer.appendChild(articleTitle);
-            articleContainer.appendChild(articleAbstract);
             articleContainer.appendChild(articlePublicationDate);
             articleContainer.classList.add("article");
             const containerButtons = document.createElement("div");
