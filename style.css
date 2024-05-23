@@ -33,7 +33,7 @@ article:hover {
 }
 
 .article-container {
-    display: flex; 
+    display: flex;
     align-items: center;
     justify-content: space-between;
 }
@@ -64,9 +64,9 @@ article:hover {
 }
 
 .article-image {
-    width: 150px; 
-    height: 150px; 
-    margin-left: 1em; 
+    width: 150px;
+    height: 150px;
+    margin-left: 1em;
     border: 1px solid black;
     border-radius: 20px;
 }

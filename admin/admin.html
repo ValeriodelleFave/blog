@@ -4,25 +4,26 @@
     <script src="./../head.js"></script>
     <title>Administration</title>
     <script src="./admin-script.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="shortcut icon" href="../icons/favicon.png" type="image/x-icon">
 </head>
 
 <body>
     <h1>Administration</h1>
+    <header class="header">
+        <form action="">
+            <input type="text" name="titleFilter" id="titleFilter" placeholder="Ricerca per titolo...">
+            <button>Ricerca</button>
+        </form>
+        <button onclick="window.location.replace('../blog-form/blog-form.html')">Nuovo</button>
+    </header>
     <div>
-        <p>Articles</p>
         <main id="container"></main>
     </div>
     <footer style="display: flex; justify-content: space-between;">
         <a href="../index.html">
             <button>
                 <img src="./../icons/Back to home.png" alt="" srcset="">
-            </button>
-        </a>
-        <a href="../blog-form/blog-form.html">
-            <button>
-                Nuovo
             </button>
         </a>
     </footer>

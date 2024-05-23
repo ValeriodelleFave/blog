@@ -2,6 +2,26 @@ body {
     margin: 1.5em 10em;
 }
 
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+header form {
+    width: 85%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+header form input {
+    width: 80%;
+    border-radius: 10px;
+    padding: 0.5em;
+}
+
+header {}
+
 form-container {
     margin: 1em;
 }
@@ -19,31 +39,23 @@ form input {
 #container {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
 }
 
 article {
-    width: 409px;
+    width: 509px;
     border: 1px solid black;
     border-radius: 20px;
     margin: 1em;
-}
-
-.article {
-    max-width: 409px;
-    display: flex;
-    flex-direction: column;
-    margin: 1em;
+    display: grid;
+    padding: 1em;
+    grid-template:
+        "title title buttons-container"
+        "publicationDate status buttons-container";
 }
 
 .article:hover {
     background-color: cornsilk;
-}
-
-.buttons-container {
-    display: flex;
-    justify-content: space-around;
 }
 
 a button {
@@ -53,4 +65,38 @@ a button {
     bottom: 10%;
     left: 10%;
     cursor: pointer;
+}
+
+.article-title {
+    font-size: 24px;
+    font-weight: 600;
+    grid-area: title;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    line-height: 1.6em;
+}
+
+.article-publicationDate {
+    font-size: 14px;
+    grid-area: publicationDate;
+    font-style: italic;
+    padding-top: 1em;
+}
+
+.article-status {
+    font-size: 14px;
+    grid-area: status;
+    padding-top: 1em;
+    display: flex;
+    font-style: italic;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    grid-area: buttons-container;
+    margin-left: 1em;
 }
