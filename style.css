@@ -1,5 +1,5 @@
-h1 {
-    text-align: center;
+body {
+    margin: 1.5em 10em;
 }
 
 main {
@@ -11,38 +11,62 @@ main {
 header {
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-
-header h1 {
-    width: 100%;
-}
-
-h1 {
-    font-size: 24px;
-    font-weight: bold;
+    justify-content: space-between;
 }
 
 a {
     text-decoration: none;
+    margin: 1em;
 }
 
 article {
-    border-bottom: 1px solid black;
+    border: 1px solid black;
     padding: 2em;
     width: 600px;
     cursor: pointer;
     color: black;
+    border-radius: 20px;
 }
 
 article:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.025);
 }
 
-article p {
-    font-weight: 600;
+.article-container {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
 }
 
-center {
-    padding: 1em;
+.article-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0;
+    line-height: 1.6em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.article-pubblication-date {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.article-abstract {
+    font-size: 16px;
+    line-height: 1.6em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.article-image {
+    width: 150px; 
+    height: 150px; 
+    margin-left: 1em; 
+    border: 1px solid black;
+    border-radius: 20px;
 }

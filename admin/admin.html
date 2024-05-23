@@ -15,36 +15,16 @@
             <p>Articles</p>
             <aside id="container"></aside>
         </div>
-        <main id="form-container">
-            <p><b>Aggiungi Articolo</b></p>
-            <form method="post">
-                <label for="_id">
-                    ID: <input type="text" name="_id" id="_id" placeholder="_id" disabled>
-                </label>
-                <label for="title">
-                    Title: <input type="text" name="title" id="title" placeholder="title">
-                </label>
-                <label for="publicationDate">
-                    Publication date: <input type="date" name="publicationDate" id="publicationDate" placeholder="publicationDate">
-                </label>
-                <label for="abstract">
-                    Abstract: <input type="text" maxlength="50" name="abstract" id="abstract" placeholder="abstract">
-                </label>
-                <label for="description">
-                    Description: <input type="text" name="description" id="description" placeholder="description">
-                </label>
-                <label for="cover">
-                    Cover: <input type="text" name="cover" id="cover" placeholder="cover">
-                </label>
-            </form>
-            <button onclick="send()">Aggiungi</button>
-            <button onclick="reset()">Reset</button>
-        </main>
     </div>
-    <footer>
+    <footer style="display: flex; justify-content: space-between;">
         <a href="../index.html">
             <button>
                 <img src="./../icons/Back to home.png" alt="" srcset="">
+            </button>
+        </a>
+        <a href="../blog-form/blog-form.html">
+            <button>
+                Nuovo
             </button>
         </a>
     </footer>

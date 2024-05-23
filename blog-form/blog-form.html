@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <script src="./../head.js"></script>
+    <title>Administration - Form</title>
+    <script src="./admin-script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../icons/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <h1>Administration</h1>
+    <main id="form-container">
+        <p><b>Aggiungi Articolo</b></p>
+        <form method="post">
+            <label for="_id">
+                ID: <input type="text" name="_id" id="_id" placeholder="_id" disabled>
+            </label>
+            <label for="title">
+                Title: <input type="text" name="title" id="title" placeholder="title">
+            </label>
+            <label for="publicationDate">
+                Publication date: <input type="date" name="publicationDate" id="publicationDate"
+                    placeholder="publicationDate">
+            </label>
+            <label for="abstract">
+                Abstract: <input type="text" maxlength="50" name="abstract" id="abstract" placeholder="abstract">
+            </label>
+            <label for="description">
+                Description: <input type="text" name="description" id="description" placeholder="description">
+            </label>
+            <label for="cover">
+                Cover: <input type="text" name="cover" id="cover" placeholder="cover">
+            </label>
+        </form>
+        <button onclick="send()">Aggiungi</button>
+        <button onclick="reset()">Reset</button>
+    </main>
+    <footer>
+        <a href="../admin/admin.html">
+            <button>
+                <img src="./../icons/Back to home.png" alt="" srcset="">
+            </button>
+        </a>
+    </footer>
+</body>
+
+</html>
