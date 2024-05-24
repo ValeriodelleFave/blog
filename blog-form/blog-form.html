@@ -9,38 +9,45 @@
 </head>
 
 <body onload="checkDataExist()">
-    <h1>Administration</h1>
+    <h1>Administration - Create a new Article</h1>
     <main id="form-container">
-        <p><b>Aggiungi Articolo</b></p>
         <form method="post">
             <label for="_id">
-                ID: <input type="text" name="_id" id="_id" placeholder="_id" disabled>
+                <input type="text" name="_id" id="_id" placeholder="_id" disabled>
             </label>
             <label for="title">
-                Title: <input type="text" name="title" id="title" placeholder="title">
+                <textarea type="text" name="title" id="title" placeholder="Title" class="xl" required></textarea>
             </label>
             <label for="publicationDate">
-                Publication date: <input type="date" name="publicationDate" id="publicationDate"
-                    placeholder="publicationDate">
+                <input type="date" name="publicationDate" id="publicationDate" placeholder="Publication Date">
             </label>
             <label for="abstract">
-                Abstract: <input type="text" maxlength="50" name="abstract" id="abstract" placeholder="abstract">
+                <textarea type="text" maxlength="50" name="abstract" id="abstract" placeholder="Abstract"
+                    class="xl"></textarea>
             </label>
             <label for="description">
-                Description: <input type="text" name="description" id="description" placeholder="description">
+                <textarea name="description" id="description" placeholder="Description" class="xl"></textarea>
             </label>
             <label for="cover">
-                Cover: <input type="text" name="cover" id="cover" placeholder="cover">
+                <input type="file" name="cover" id="cover" placeholder="cover">
+            </label>
+            <label for="tags">
+                <select name="tags" id="tags" multiple>
+                    <option value="tag1">Tag1</option>
+                    <option value="tag2">Tag2</option>
+                    <option value="tag3">Tag3</option>
+                    <option value="tag4">Tag4</option>
+                    <option value="tag5">Tag5</option>
+                    <option value="tag6">Tag6</option>
+                </select>
             </label>
         </form>
-        <button onclick="send()">Aggiungi</button>
         <button onclick="reset()">Reset</button>
+        <button onclick="send()">Aggiungi</button>
     </main>
     <footer>
         <a href="../admin/admin.html">
-            <button>
-                <img src="./../icons/Back to home.png" alt="" srcset="">
-            </button>
+            <img src="./../icons/Back to home.png" alt="" srcset="">
         </a>
     </footer>
 </body>

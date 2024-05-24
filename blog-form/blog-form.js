@@ -10,17 +10,18 @@ async function send() {
         image: {
             data: "scasda",
             orientation: "right"
-        }
+        },
+        creationDate: new Date().toLocaleDateString()
     }
 
-    await fetch("http://localhost:3000/blog/articles", {
+    await fetch("https://my-endpoints.onrender.com/blog/articles", {
         body: JSON.stringify(object),
         method: "POST",
         headers: {
             "Content-type": "application/json; charset=UTF-8"
         }
     });
-    loadData();
+    window.location.href = "/admin/admin.html";
 }
 
 function edit(params) {

@@ -2,6 +2,7 @@ fetch("https://my-endpoints.onrender.com/blog/articles").then(async (response) =
     const articles = await response.json();
     let html = "";
     for (const article of articles) {
+        if (article.status) {
         html += `
             <a href="./article/article.html?${article._id}">
                 <article class="article-container">
@@ -13,7 +14,7 @@ fetch("https://my-endpoints.onrender.com/blog/articles").then(async (response) =
                     ${article.image?.orientation === "right" ? `<img class="article-image" src=${article.image?.data}>` : ""}
                 </article>
             </a>
-        `;
+        `;}
     }
     document.getElementById("container").innerHTML = html;
 })
